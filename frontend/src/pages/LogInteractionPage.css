@@ -1,0 +1,88 @@
+.log-interaction-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  height: calc(100vh - 110px); /* Fill space between header and footer */
+  padding-bottom: var(--space-md) !important;
+}
+
+.helper-banner {
+  padding: 1rem 1.25rem !important;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(20, 184, 166, 0.04) 100%);
+  border-color: rgba(139, 92, 246, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex-shrink: 0;
+}
+
+.helper-banner-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: #c084fc;
+}
+
+.banner-icon {
+  color: var(--accent-primary);
+}
+
+.helper-banner p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.helper-banner p strong {
+  color: var(--text-primary);
+}
+
+/* Dual Panel Grid styling */
+.dual-panel-layout {
+  flex: 1;
+  min-height: 0; /* Important for flex scrolling container */
+  gap: var(--space-lg);
+  margin-top: var(--space-xs);
+}
+
+.panel-col {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0; /* Allows inner containers to scroll */
+}
+
+.chat-panel-col {
+  height: 100%;
+}
+
+.form-panel-col {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.form-panel-col::-webkit-scrollbar {
+  width: 4px;
+}
+
+.form-panel-col::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+  .log-interaction-page {
+    height: auto;
+  }
+  .dual-panel-layout {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .panel-col {
+    height: 550px;
+  }
+  .form-panel-col {
+    height: auto;
+    overflow: visible;
+  }
+}

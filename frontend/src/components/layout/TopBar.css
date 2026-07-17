@@ -1,0 +1,177 @@
+.topbar-container {
+  height: 70px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--space-xl);
+  background-color: rgba(11, 15, 25, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.topbar-title-section h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* Connection Badge */
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.connection-status svg {
+  color: currentColor;
+}
+
+.connection-status.online {
+  background-color: rgba(16, 185, 129, 0.08);
+  color: var(--accent-emerald);
+  border-color: rgba(16, 185, 129, 0.15);
+}
+
+.connection-status.online:hover {
+  background-color: rgba(16, 185, 129, 0.12);
+}
+
+.connection-status.offline {
+  background-color: rgba(244, 63, 94, 0.08);
+  color: var(--accent-rose);
+  border-color: rgba(244, 63, 94, 0.15);
+  animation: pulse-glow-rose 1.5s infinite;
+}
+
+.connection-status.offline:hover {
+  background-color: rgba(244, 63, 94, 0.12);
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-glow-rose {
+  0%, 100% {
+    box-shadow: 0 0 0 0px rgba(244, 63, 94, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 8px 1px rgba(244, 63, 94, 0.4);
+  }
+}
+
+/* Rep Profile */
+.rep-profile-settings {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.35rem 0.75rem;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.rep-profile-settings:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.rep-name-display {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.rep-avatar-icon {
+  color: var(--accent-primary);
+}
+
+.rep-info-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.rep-role-lbl {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.rep-name-val {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+/* Rep Edit Form */
+.rep-name-form {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.rep-name-input {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+  width: 150px;
+  border-radius: 4px;
+}
+
+.rep-save-btn, .rep-cancel-btn {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.rep-save-btn {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+.rep-cancel-btn {
+  background-color: transparent;
+  color: var(--text-secondary);
+}
+
+.rep-cancel-btn:hover {
+  color: var(--text-primary);
+}
+
+@media (max-width: 900px) {
+  .topbar-container {
+    padding: 0 var(--space-md);
+  }
+  .topbar-title-section h1 {
+    font-size: 1.2rem;
+  }
+}

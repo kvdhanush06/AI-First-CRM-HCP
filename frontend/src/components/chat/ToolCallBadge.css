@@ -1,0 +1,101 @@
+.tool-call-container {
+  margin: var(--space-sm) 0;
+  border-radius: 8px;
+  background-color: rgba(17, 24, 39, 0.4);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--tool-accent);
+  overflow: hidden;
+  max-width: 500px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  animation: slideInTool 0.2s ease-out;
+}
+
+@keyframes slideInTool {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tool-call-header {
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  cursor: pointer;
+  user-select: none;
+}
+
+.tool-call-header:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.tool-call-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--tool-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.tool-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tool-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.tool-toggle-btn:hover {
+  color: var(--text-primary);
+}
+
+/* Expanded Arguments View */
+.tool-call-args {
+  padding: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255,255,255,0.03);
+}
+
+.args-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--space-xs);
+}
+
+.args-code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.75rem;
+  color: #a5b4fc;
+  white-space: pre-wrap;
+  word-break: break-all;
+  background-color: rgba(0,0,0,0.3);
+  padding: 0.5rem;
+  border-radius: 4px;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid rgba(255,255,255,0.02);
+}
